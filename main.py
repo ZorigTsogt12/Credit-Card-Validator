@@ -46,6 +46,10 @@ def add_all(card_list):
 
 while True:
     try:
+        # Asks for the card number
+        # Removes space incase users enter with spaces
+        # If the credit card number is more or less than 16 the value is rejected
+        # The card number is processed through the algorithms
         card_number = input('Please enter the 16-digit card number: ')
         card_number = card_number.replace(' ', '')
         if len(card_number) == 16:
@@ -64,6 +68,7 @@ total_add = add_all(multiple_list)
 
 total_new = total_add + int(card_number[15])
 
+# Check that the card number is valid. Done by checking whether the addition of the 15 digits and the last number the card number is a multiple of 10
 if total_new % 10 == 0:
     print('The credit card detail is valid')
 else:
